@@ -110,14 +110,15 @@ namespace CoeficienteCorrelacion
 
             double correlationCoefficient = (nominator / denominator);
 
+            //Output
             this.Output.Text = Convert.ToString(correlationCoefficient);
-            if (correlationCoefficient <= 0.5)
+            if (correlationCoefficient <= -0.5)
             {
                 this.Correlation.Text = "Correlación negativa fuerte";
             }
             else
             {
-                if ((correlationCoefficient < 0) && (correlationCoefficient > 0.5))
+                if ((correlationCoefficient < 0) && (correlationCoefficient > -0.5))
                 {
                     this.Correlation.Text = "Correlación negativa débil";
                 }
@@ -140,15 +141,6 @@ namespace CoeficienteCorrelacion
                     }
                 }
             }
-
-            //System.IO.File.WriteAllText(@"C:\Users\Fernando\Desktop\xjson.json", Newtonsoft.Json.JsonConvert.SerializeObject(matrixX));
-            //System.IO.File.WriteAllText(@"C:\Users\Fernando\Desktop\yjson.json", Newtonsoft.Json.JsonConvert.SerializeObject(matrixY));
-            //
-            //string verify = "";
-            //verify += ("sumX:" + Convert.ToString(sumX) + "sumY:" + Convert.ToString(sumY));
-            //verify += ("MedianX:" + Convert.ToString(medianX) + "\n " + "MedianY:" + Convert.ToString(medianY) + "\n " + "ssX:" + Convert.ToString(ssX) + "\n " + "ssY:" + Convert.ToString(ssY) + "\n " + "nominator:" + Convert.ToString(nominator) + "\n " + "denominator:" + Convert.ToString(denominator));
-            //System.IO.File.WriteAllText(@"C:\Users\Fernando\Desktop\verify.txt", verify);
-
             #endregion
         }
     }
